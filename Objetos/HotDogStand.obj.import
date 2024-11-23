@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brupcnvc188j3"
+path="res://.godot/imported/HotDogStand.obj-28c5ddbae4d0a609320627a20b926b7b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/HotDogStand.obj-28c5ddbae4d0a609320627a20b926b7b.mesh"]
+
+source_file="res://Objetos/HotDogStand.obj"
+dest_files=["res://.godot/imported/HotDogStand.obj-28c5ddbae4d0a609320627a20b926b7b.mesh", "res://.godot/imported/HotDogStand.obj-28c5ddbae4d0a609320627a20b926b7b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

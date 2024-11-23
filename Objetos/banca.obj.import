@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xtqu2ktipigr"
+path="res://.godot/imported/banca.obj-8e61e840b248de7487d9614195f0605f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/banca.obj-8e61e840b248de7487d9614195f0605f.mesh"]
+
+source_file="res://Objetos/banca.obj"
+dest_files=["res://.godot/imported/banca.obj-8e61e840b248de7487d9614195f0605f.mesh", "res://.godot/imported/banca.obj-8e61e840b248de7487d9614195f0605f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,791 @@
+[gd_scene load_steps=26 format=3 uid="uid://dwgi2t4e215lb"]
+
+[ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Materials/Red.tres" id="1_mwg82"]
+[ext_resource type="Material" uid="uid://dqliy1nvg1t1g" path="res://Materials/gray.tres" id="2_dog75"]
+[ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="2_v5fbg"]
+[ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="3_6vtq5"]
+[ext_resource type="Material" uid="uid://bx25qkalva4wn" path="res://Materials/gray2.tres" id="3_vwxe5"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="4_fsyaw"]
+[ext_resource type="Material" uid="uid://c382hy8ehqryp" path="res://Materials/white.tres" id="4_j2y41"]
+[ext_resource type="ArrayMesh" uid="uid://c7i0c1hp46gpl" path="res://Objetos/superficie.obj" id="5_piwqj"]
+[ext_resource type="ArrayMesh" uid="uid://bu1wb5oejqx35" path="res://Objetos/Tree.obj" id="7_ymb7l"]
+[ext_resource type="Material" uid="uid://cj8q1mn6t443d" path="res://Materials/brown.tres" id="8_qfio6"]
+[ext_resource type="ArrayMesh" uid="uid://cr5uyyd0ecm4i" path="res://Objetos/arbol2.obj" id="9_qoywo"]
+[ext_resource type="Material" uid="uid://uwfy3jtiopc5" path="res://Materials/violet.tres" id="10_gt3jo"]
+[ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="11_ht3ct"]
+[ext_resource type="ArrayMesh" uid="uid://f33prj4v3wtn" path="res://Objetos/Market.obj" id="12_6cdl6"]
+[ext_resource type="ArrayMesh" uid="uid://xtqu2ktipigr" path="res://Objetos/banca.obj" id="15_2ksli"]
+[ext_resource type="ArrayMesh" uid="uid://bp8os62rthrys" path="res://Objetos/mesa_blanca.obj" id="16_g766c"]
+[ext_resource type="ArrayMesh" uid="uid://brupcnvc188j3" path="res://Objetos/HotDogStand.obj" id="17_h0dc3"]
+[ext_resource type="ArrayMesh" uid="uid://dc4rjygkbeclt" path="res://Objetos/Iglesia.obj" id="18_0gnnd"]
+[ext_resource type="Material" uid="uid://b0uxpimudkg18" path="res://Materials/beige.tres" id="19_2p2c0"]
+[ext_resource type="ArrayMesh" uid="uid://b4n4gb4p0nl3t" path="res://Objetos/Residence.obj" id="20_ne5q4"]
+[ext_resource type="Material" uid="uid://bsdjbmtiifs61" path="res://Materials/black.tres" id="21_7cx35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqrso"]
+albedo_color = Color(0.243137, 0.419608, 0.247059, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6yvq4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_o3f52"]
+sky_material = SubResource("ProceduralSkyMaterial_6yvq4")
+
+[sub_resource type="Environment" id="Environment_foamo"]
+background_mode = 2
+sky = SubResource("Sky_o3f52")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 12.3843, 47.5705)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -65.0
+offset_right = 46.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.88, 1)
+script = ExtResource("4_fsyaw")
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -138.0
+offset_top = -184.0
+offset_right = 146.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Créditos:
+Manuel Navarro Valadez
+220790806
+Simulación por Computadora
+2024B"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_top = 121.0
+offset_right = 366.0
+offset_bottom = 273.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "TABACHINES"
+
+[node name="Park" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Park"]
+material_override = SubResource("StandardMaterial3D_aqrso")
+use_collision = true
+size = Vector3(52.2363, 0.002, 59.575)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Park"]
+environment = SubResource("Environment_foamo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Park"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65348, 0.0195841, 33.5259)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(59.5172, 0.002, 7.38727)
+
+[node name="Banqueta3" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139432, 0.1, 30.2571)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(53.83, 0.1, 1.015)
+
+[node name="Banqueta4" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0909206, 0.1, -30.2636)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(53.999, 0.1, 1.015)
+
+[node name="Banqueta5" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.05318, -0.0100454, 0.234812, 0.000929493, 0.999388, 0.0311393, -0.288077, -0.0335001, 0.858547, -0.164733, 0.0450097, -19.0679)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(49.9502, 0.5, 3.208)
+
+[node name="Banqueta6" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.05931, 0.00764842, -0.215747, 0.000929493, 0.999388, 0.0311393, 0.264626, -0.0341273, 0.863536, -0.164733, 0.0450097, -19.0679)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(49.9502, 0.5, 3.208)
+
+[node name="Banqueta7" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.05318, -0.0100454, 0.234812, 0.000929493, 0.999388, 0.0311393, -0.288077, -0.0335001, 0.858547, -0.164733, 0.0450097, -2.82601)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(49.9502, 0.5, 3.208)
+
+[node name="Banqueta11" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.09091, -0.00231293, 0.0372153, 0.000929493, 0.999388, 0.0311393, -0.0456847, -0.0348973, 0.889301, 8.97188, 0.0488822, -3.15285)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(6.21483, 0.5, 6.7597)
+
+[node name="Banqueta12" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.05952, 0.00762102, -0.215054, 0.000929493, 0.999388, 0.0311393, 0.263776, -0.0341334, 0.863709, 7.28661, 1.08775, -0.120476)
+material_override = ExtResource("4_j2y41")
+use_collision = true
+size = Vector3(2.9248, 2.39539, 0.768402)
+
+[node name="Banqueta13" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.08196, -0.0055428, 0.119617, 0.000929491, 0.999388, 0.0311393, -0.146767, -0.0345318, 0.882005, 7.28661, 1.08775, -6.41789)
+material_override = ExtResource("4_j2y41")
+use_collision = true
+size = Vector3(2.9248, 2.39539, 0.768402)
+
+[node name="Banqueta14" type="CSGBox3D" parent="Park"]
+transform = Transform3D(0.0375916, 0.0349135, -0.889552, 0.000929492, 0.999388, 0.0311393, 1.09122, -0.00205402, 0.0306178, 11.4891, 1.08775, -3.23868)
+material_override = ExtResource("4_j2y41")
+use_collision = true
+size = Vector3(2.9248, 2.39539, 0.768402)
+
+[node name="Banqueta8" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.05931, 0.00764842, -0.215747, 0.000929493, 0.999388, 0.0311393, 0.264626, -0.0341273, 0.863536, -0.164733, 0.0450097, -2.82601)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(49.9502, 0.5, 3.208)
+
+[node name="Banqueta9" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.05318, -0.0100454, 0.234812, 0.000929493, 0.999388, 0.0311393, -0.288077, -0.0335001, 0.858547, -0.164733, 0.0450097, 13.1112)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(49.9502, 0.5, 3.208)
+
+[node name="Banqueta10" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1.05931, 0.00764842, -0.215747, 0.000929493, 0.999388, 0.0311393, 0.264626, -0.0341273, 0.863536, -0.164733, 0.0450097, 13.1112)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(49.9502, 0.5, 3.208)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Park"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, 29.7007, 0.0195841, 0.000481788)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(59.7828, 0.002, 7.38727)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Park"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, -29.8579, 0.0195841, 3.6497)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(67.0813, 0.002, 7.38727)
+
+[node name="Banqueta" type="CSGBox3D" parent="Park"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, -26.5291, 0.1, 0.428516)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(60.656, 0.1, 1.011)
+
+[node name="Banqueta2" type="CSGBox3D" parent="Park"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, 26.4669, 0.1, 0.00548221)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(59.81, 0.1, 1.011)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Park"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201031, 0.0195841, -33.5379)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(66.938, 0.002, 7.38727)
+
+[node name="Superficie" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.266338, 0, 0, 0, 0.19108, 0, 0, 0, -0.28944, -8.76615, -1.76894, -9.29985)
+mesh = ExtResource("5_piwqj")
+surface_material_override/0 = ExtResource("3_6vtq5")
+
+[node name="Market" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.195894, 0, 0, 0, 0.336055, 0, 0, 0, 0.336055, 27.875, 0.00100136, 25.0626)
+mesh = ExtResource("12_6cdl6")
+skeleton = NodePath("../../Móviles")
+surface_material_override/12 = ExtResource("2_v5fbg")
+
+[node name="Market2" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.195894, 0, 0, 0, 0.336055, 0, 0, 0, 0.336055, 27.875, 0.00100136, 18.3811)
+mesh = ExtResource("12_6cdl6")
+skeleton = NodePath("../../Móviles")
+surface_material_override/12 = ExtResource("1_mwg82")
+
+[node name="Market4" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.140467, 0, 0, 0, 0.314343, 0, 0, 0, 0.240971, 17.8996, 0.00100136, -3.24257)
+mesh = ExtResource("12_6cdl6")
+skeleton = NodePath("../../Móviles")
+surface_material_override/12 = ExtResource("1_mwg82")
+
+[node name="Market3" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.195894, 0, 0, 0, 0.336055, 0, 0, 0, 0.336055, 27.875, 0.00100136, 11.4645)
+mesh = ExtResource("12_6cdl6")
+skeleton = NodePath("../../Móviles")
+surface_material_override/12 = ExtResource("2_dog75")
+
+[node name="Banca" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.977275, 0.211668, 0.0113598, 1.19512e-09, -0.0535909, 0.998563, 0.211973, -0.975871, -0.0523731, 9.36658, 0.0639865, 13.402)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca6" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.977275, 0.211668, 0.0113598, 1.19512e-09, -0.0535909, 0.998563, 0.211973, -0.975871, -0.0523731, 9.36658, 0.0639865, -19.0338)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca2" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.975749, -0.218578, -0.0117307, 3.75833e-09, -0.0535909, 0.998563, -0.218893, 0.974347, 0.0522913, 15.5044, 0.0639865, 19.2078)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca7" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.975749, -0.218578, -0.0117307, 3.75833e-09, -0.0535909, 0.998563, -0.218893, 0.974347, 0.0522913, 15.5044, 0.0639865, 3.1648)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca8" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.975749, -0.218578, -0.0117307, 3.75833e-09, -0.0535909, 0.998563, -0.218893, 0.974347, 0.0522913, 15.5044, 0.0639865, -13.2661)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca3" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.975749, -0.218578, -0.0117307, 3.75833e-09, -0.0535909, 0.998563, -0.218893, 0.974347, 0.0522913, -12.813, 0.0639865, 11.9261)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca4" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.975749, -0.218578, -0.0117307, 3.75833e-09, -0.0535909, 0.998563, -0.218893, 0.974347, 0.0522913, -12.813, 0.0639865, -3.86952)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca9" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.94661, 0.321918, 0.0172767, 3.75834e-09, -0.0535909, 0.998563, 0.322381, 0.94525, 0.0507297, -12.813, 0.0639865, 2.54689)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca10" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.94661, 0.321918, 0.0172767, 3.75834e-09, -0.0535909, 0.998563, 0.322381, 0.94525, 0.0507297, -12.813, 0.0639865, 18.5584)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca11" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.94661, 0.321918, 0.0172767, 3.75834e-09, -0.0535909, 0.998563, 0.322381, 0.94525, 0.0507297, -12.813, 0.0639865, -13.265)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="Banca5" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.975749, -0.218578, -0.0117307, 3.75833e-09, -0.0535909, 0.998563, -0.218893, 0.974347, 0.0522913, -12.813, 0.0639865, -19.9802)
+mesh = ExtResource("15_2ksli")
+surface_material_override/0 = ExtResource("2_dog75")
+
+[node name="MesaBlanca" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.000470599, -0.0159765, -0.000249305, 0, -0.000249413, 0.0159834, -0.0159784, -0.000470542, -7.34258e-06, 28.352, 0.734662, 18.3351)
+mesh = ExtResource("16_g766c")
+
+[node name="MesaBlanca2" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.000470599, -0.0159765, -0.000249305, 0, -0.000249413, 0.0159834, -0.0159784, -0.000470542, -7.34258e-06, 28.352, 0.734662, 25.1533)
+mesh = ExtResource("16_g766c")
+
+[node name="MesaBlanca3" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.000470599, -0.0159765, -0.000249305, 0, -0.000249413, 0.0159834, -0.0159784, -0.000470542, -7.34258e-06, 28.352, 0.734662, 11.6015)
+mesh = ExtResource("16_g766c")
+
+[node name="MesaBlanca4" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(0.000278817, -0.0157847, -0.000249258, 0, -0.00024642, 0.0159804, -0.00946675, -0.000464895, -7.3412e-06, 18.1762, 0.734662, -3.40377)
+mesh = ExtResource("16_g766c")
+
+[node name="HotDogStand" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.0181072, 0, -0.269066, 0, 0.269675, 0, 0.269066, 0, -0.0181072, 27.6502, 0.00100136, 4.69898)
+mesh = ExtResource("17_h0dc3")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("1_mwg82")
+
+[node name="HotDogStand2" type="MeshInstance3D" parent="Park"]
+transform = Transform3D(-0.0146447, 0, 0.269277, 0, 0.269675, 0, -0.269277, 0, -0.0146447, -23.1346, 0.00100136, 23.6279)
+mesh = ExtResource("17_h0dc3")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("1_mwg82")
+
+[node name="Arboles" type="Node" parent="Park"]
+
+[node name="Tree" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.321986, 0, 0, 0, 0.321986, -11.475, 0, -17.942)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree2" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -11.475, 0, 27.7946)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree3" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -3.77605, 0, 27.7946)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree4" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, 3.84228, 0, 27.7946)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree19" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.290693, 0, 0, 0, 0.321986, 3.84228, 0, 16.8757)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree21" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, -7.1391, 0, 16.8757)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree22" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, -7.1391, 0, 24.0089)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree23" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, -18.7325, 0, 24.0089)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree24" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, -18.7325, 0, 12.9719)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree25" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, -18.7325, 0, -2.02026)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree26" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, 3.06153, 0, -7.717)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree27" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, 3.06153, 0, 3.0139)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree28" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, 3.06153, 0, 8.12015)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree29" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, 3.06153, 0, -16.4158)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree30" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, 23.3818, 0, -16.4158)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree31" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, 23.3818, 0, -2.32771)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree32" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.247373, 0, 0, 0, 0.321986, 23.3818, 0, 9.79716)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree20" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.290693, 0, 0, 0, 0.321986, 22.7553, 0, 16.8757)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree5" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, 10.6127, 0, 27.7946)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree6" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, 18.9355, 0, 27.7946)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree7" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -21.4505, 0, 27.7946)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree8" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -25.1216, 0, 18.3975)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree9" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -25.1216, 0, 7.19366)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree10" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -25.1216, 0, -1.66776)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree11" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -25.1216, 0, -9.7783)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree12" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -25.1216, 0, -17.8333)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree13" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -25.1216, 0, -24.9654)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree14" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -16.3494, 0, -28.7975)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree15" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, -7.34828, 0, -28.7975)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree16" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, 3.53441, 0, -28.7975)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree17" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, 11.586, 0, -28.7975)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="Tree18" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.321986, 0, 0, 0, 0.460124, 0, 0, 0, 0.321986, 19.9218, 0, -28.7975)
+mesh = ExtResource("7_ymb7l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("3_6vtq5")
+surface_material_override/3 = ExtResource("3_6vtq5")
+surface_material_override/4 = ExtResource("3_6vtq5")
+
+[node name="BigTree" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.575883, 0, 0, 0, 0.575883, 0, 0, 0, 0.575883, 14.5493, 0.000999928, -11.5999)
+mesh = ExtResource("9_qoywo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("10_gt3jo")
+
+[node name="BigTree3" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.575883, 0, 0, 0, 0.575883, 0, 0, 0, 0.575883, 14.5493, 0.000999928, 4.87739)
+mesh = ExtResource("9_qoywo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("10_gt3jo")
+
+[node name="BigTree2" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.575883, 0, 0, 0, 0.575883, 0, 0, 0, 0.575883, -7.28406, 0.000999928, -11.5999)
+mesh = ExtResource("9_qoywo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("11_ht3ct")
+
+[node name="BigTree4" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.575883, 0, 0, 0, 0.575883, 0, 0, 0, 0.575883, -7.28406, 0.000999928, 5.01094)
+mesh = ExtResource("9_qoywo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("11_ht3ct")
+
+[node name="BigTree5" type="MeshInstance3D" parent="Park/Arboles"]
+transform = Transform3D(0.575883, 0, 0, 0, 0.575883, 0, 0, 0, 0.575883, 3.79687, 0.000999928, 22.9287)
+mesh = ExtResource("9_qoywo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_qfio6")
+surface_material_override/1 = ExtResource("3_6vtq5")
+surface_material_override/2 = ExtResource("11_ht3ct")
+
+[node name="Iglesia" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 72.5691)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.36983)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(52.2363, 0.002, 50.8354)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Iglesia"]
+environment = SubResource("Environment_foamo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Iglesia"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65348, 0.0195841, 24.7731)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(59.5172, 0.002, 7.38727)
+
+[node name="Banqueta3" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139432, 0.1, 21.5043)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(53.83, 0.1, 1.015)
+
+[node name="Banqueta4" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0909206, 0.1, -30.2636)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(53.999, 0.1, 1.015)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, 29.6989, 0.0195841, -0.685509)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(58.4108, 0.002, 7.38727)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, -29.8695, 0.0195841, -0.79792)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(58.186, 0.002, 7.38727)
+
+[node name="Banqueta" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, -26.5291, 0.1, 0.428516)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(60.656, 0.1, 1.011)
+
+[node name="Banqueta2" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(0.00261803, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00261803, 26.4566, 0.1, -3.93944)
+material_override = ExtResource("3_vwxe5")
+use_collision = true
+size = Vector3(51.9201, 0.1, 1.011)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Iglesia"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201031, 0.0195841, -33.5379)
+material_override = ExtResource("2_dog75")
+use_collision = true
+size = Vector3(66.938, 0.002, 7.38727)
+
+[node name="Iglesia" type="MeshInstance3D" parent="Iglesia"]
+transform = Transform3D(-0.0353599, -0.00113488, 2.5028e-05, 4.12541e-05, -0.000505238, 0.0353745, -0.00113441, 0.0353563, 0.000506301, -10.6896, -0.793755, -0.887581)
+mesh = ExtResource("18_0gnnd")
+surface_material_override/0 = ExtResource("19_2p2c0")
+
+[node name="Residence" type="MeshInstance3D" parent="Iglesia"]
+transform = Transform3D(1.84785, 0, 0, 0, 1.84785, 0, 0, 0, 1.84785, 20.7906, -0.0297117, -14.5672)
+material_override = ExtResource("8_qfio6")
+mesh = ExtResource("20_ne5q4")
+surface_material_override/0 = ExtResource("21_7cx35")
+surface_material_override/1 = ExtResource("21_7cx35")
+surface_material_override/2 = ExtResource("21_7cx35")
+surface_material_override/114 = ExtResource("8_qfio6")
+surface_material_override/133 = ExtResource("8_qfio6")
+surface_material_override/158 = ExtResource("8_qfio6")
+surface_material_override/159 = ExtResource("8_qfio6")
+
+[node name="Residence2" type="MeshInstance3D" parent="Iglesia"]
+transform = Transform3D(1.84785, 0, 0, 0, 1.84785, 0, 0, 0, 1.84785, 20.7906, -0.0297117, 10.2853)
+mesh = ExtResource("20_ne5q4")
+surface_material_override/0 = ExtResource("21_7cx35")
+surface_material_override/1 = ExtResource("21_7cx35")
+surface_material_override/2 = ExtResource("21_7cx35")
+surface_material_override/114 = ExtResource("8_qfio6")
+surface_material_override/133 = ExtResource("8_qfio6")
+surface_material_override/158 = ExtResource("8_qfio6")
+surface_material_override/159 = ExtResource("8_qfio6")
+
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer" method="_on_quit_button_pressed"]

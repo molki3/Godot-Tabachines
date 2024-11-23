@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://du2arfw1akpo6"
+path="res://.godot/imported/perro_debil.obj-70628968df66e2c8223ec228833cfbad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/perro_debil.obj-70628968df66e2c8223ec228833cfbad.mesh"]
+
+source_file="res://Objetos/perro_debil.obj"
+dest_files=["res://.godot/imported/perro_debil.obj-70628968df66e2c8223ec228833cfbad.mesh", "res://.godot/imported/perro_debil.obj-70628968df66e2c8223ec228833cfbad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

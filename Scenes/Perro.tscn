@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ycu7k4rob15g"]
+
+[ext_resource type="ArrayMesh" uid="uid://du2arfw1akpo6" path="res://Objetos/perro_debil.obj" id="1_bl2uc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7onop"]
+height = 2.10402
+
+[node name="Perro" type="Area3D"]
+
+[node name="PerroDebil" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_bl2uc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.51521, 0, 0, 0, 0.00370473, 0.515197, 0, -0.515197, 0.00370473, 0, 0.186667, -0.0880075)
+shape = SubResource("CapsuleShape3D_7onop")

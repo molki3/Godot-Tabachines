@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dc4rjygkbeclt"
+path="res://.godot/imported/Iglesia.obj-5e922e0c490743f0ae9cd73915f19286.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Iglesia.obj-5e922e0c490743f0ae9cd73915f19286.mesh"]
+
+source_file="res://Objetos/Iglesia.obj"
+dest_files=["res://.godot/imported/Iglesia.obj-5e922e0c490743f0ae9cd73915f19286.mesh", "res://.godot/imported/Iglesia.obj-5e922e0c490743f0ae9cd73915f19286.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bp8os62rthrys"
+path="res://.godot/imported/mesa_blanca.obj-71472969037cf1c80fe5e26ddb1fd3da.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mesa_blanca.obj-71472969037cf1c80fe5e26ddb1fd3da.mesh"]
+
+source_file="res://Objetos/mesa_blanca.obj"
+dest_files=["res://.godot/imported/mesa_blanca.obj-71472969037cf1c80fe5e26ddb1fd3da.mesh", "res://.godot/imported/mesa_blanca.obj-71472969037cf1c80fe5e26ddb1fd3da.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
